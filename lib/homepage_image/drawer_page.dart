@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:test/home_page.dart';
+
 
 class DrawerPage extends StatelessWidget {
   const DrawerPage({super.key});
@@ -8,7 +10,9 @@ class DrawerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.blueAccent,
+      
+      shadowColor: Colors.amber,
+      backgroundColor: Colors.black,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -22,12 +26,13 @@ class DrawerPage extends StatelessWidget {
                   color: Colors.amber,
                   fontWeight: FontWeight.w900,
                   fontSize: 40,
-                  backgroundColor: Colors.blue),
+                  backgroundColor: Colors.black),
             ),
             onTap: () {
               Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
+                PageTransition(
+                  child: const HomePage(),
+                  type: PageTransitionType.bottomToTop
                 ),
               );
             },

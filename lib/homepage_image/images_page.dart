@@ -18,9 +18,10 @@ class ImagesPage extends StatelessWidget {
               color: Colors.amber,
               fontWeight: FontWeight.w900),
         ),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.black,
       ),
       drawer: DrawerPage(),
+      drawerScrimColor: Colors.amber,
       body: Center(
         child: Column(
           children: [
